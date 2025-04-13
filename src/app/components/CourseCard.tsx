@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import './CourseCard.css';
 import EnrollmentForm from '../enroll/page';
 
