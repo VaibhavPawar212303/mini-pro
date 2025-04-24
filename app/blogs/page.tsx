@@ -18,7 +18,7 @@ export default function AllBlogsPage() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/blogs');
+        const res = await fetch('/api/blogs');
         const data: Blog[] = await res.json();
 
         const sortedData = data.sort(
