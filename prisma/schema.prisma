@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+enum crdb_internal_region {
+  aws_ap_south_1 @map("aws-ap-south-1")
+}
+
+model Blog {
+  id             String   @id @default(uuid())
+  title          String
+  slug           String   @unique 
+  url            String   @unique
+  categories     String[] // Array of categories
+  author         String?
+  publishedDate  DateTime?
+  commentCount   String?
+  readingTime    String?
+  mainImageUrl   String?
+  content        String
+  cssLinks       String[] // All associated CSS links
+  createdAt      DateTime @default(now())
+}
