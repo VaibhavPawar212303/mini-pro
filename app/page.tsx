@@ -3,11 +3,11 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import Header from './components/Header/Header';
 import Intro from './components/Intro/Intro';
-import { motion } from 'framer-motion';
-import CoursesPage from './Courses/page';
 import Footer from './components/Footer/Footer';
+import CoursesPage from './Courses/page';
 
 type Blog = {
   id: string;

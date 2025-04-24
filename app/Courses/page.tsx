@@ -1,9 +1,7 @@
 // pages/courses.tsx
 'use client';
-
 import React from 'react';
 import CourseCard from '../components/CourseCard/CourseCard';
-
 
 const CoursesPage = () => {
   const instructorName = 'Vaibhav Pawar';
