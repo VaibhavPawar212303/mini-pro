@@ -29,21 +29,20 @@ export default function Home() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/blogs');
+        const res = await fetch('/api/blogs');
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
         const data: Blog[] = await res.json();
-
         const sortedData = data.sort(
           (a, b) =>
-            new Date(b.publishedDate).getTime() -
-            new Date(a.publishedDate).getTime()
+            new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
         );
-
         setBlogs(sortedData.slice(0, 6));
       } catch (error) {
         console.error('Failed to fetch blogs:', error);
       }
     };
-
     fetchBlogs();
   }, []);
 
